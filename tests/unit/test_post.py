@@ -9,6 +9,12 @@ class PostTest(TestCase):
         self.assertEqual(post.title, 'Title')
         self.assertEqual(post.content, 'Content')
 
+    def test_repr(self):
+        post = Post('Title', 'Content')
+        expected = 'Title'
+
+        self.assertEqual(post.__repr__(), expected)
+
     def test_json(self):
         post = Post('Title', 'Content')
         expected = {'Title': 'Title',

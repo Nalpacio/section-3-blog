@@ -3,8 +3,11 @@ class Post:
         self.title = title
         self.content = content
 
+    def __repr__(self):
+        return '{}'.format(self.title)
+
     def json(self):
-        return{
+        return {
             'Title':self.title,
             'Content':self.content,
         }
